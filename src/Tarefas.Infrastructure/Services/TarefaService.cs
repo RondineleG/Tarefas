@@ -12,26 +12,25 @@ namespace Tarefas.Infrastructure.Services
     {
         private readonly ITarefaRepository _tarefaRepository;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IMemoryCache _cache;
 
-        public TarefaService(ITarefaRepository tarefaRepository, IUnitOfWork unitOfWork, IMemoryCache cache)
+        public TarefaService(ITarefaRepository tarefaRepository, IUnitOfWork unitOfWork)
         {
             _tarefaRepository = tarefaRepository;
             _unitOfWork = unitOfWork;
-            _cache = cache;
         }
 
         public async Task<TarefaResponse> Adicionar(Tarefa tarefa)
         {
-
+            
             if (tarefa.Status != 0)
             {
-                return new TarefaResponse($"Tarefa não pode ser cadastrada como {EStatus.Pendente}, o campos Status deve ser {0}");
+                return new TarefaResponse($"Tarefa nÃ£o pode ser cadastrada como {EStatus.Pendente} ou {EStatus.Concluido}, o campos Status deve ser {0} ou {1}");
             }
+
 
             if (tarefa.Descricao =="")
             {
-                return new TarefaResponse($"Campo {tarefa.Status} é obrigatorio");
+                return new TarefaResponse($"Campo {tarefa.Status} ï¿½ obrigatorio");
             }
             try
             {
@@ -53,7 +52,7 @@ namespace Tarefas.Infrastructure.Services
 
             if (tarefaExistente == null)
             {
-                return new TarefaResponse("Tarefa não encontrada!");
+                return new TarefaResponse("Tarefa nï¿½o encontrada!");
             }                
 
             try
@@ -66,7 +65,7 @@ namespace Tarefas.Infrastructure.Services
                 if(tarefa.Status == EStatus.Pendente)
                 {
                     var status = myType.GetProperty("Status").Name;
-                    return new TarefaResponse($"Tarefa não pode ser alterado para {EStatus.Pendente}, o campos Status deve ser  {1}");
+                    return new TarefaResponse($"Tarefa nï¿½o pode ser alterado para {EStatus.Pendente}, o campos Status deve ser  {1}");
                 }
                 tarefaExistente.Descricao = tarefa.Descricao;
                 tarefaExistente.Status = tarefa.Status;
@@ -87,7 +86,7 @@ namespace Tarefas.Infrastructure.Services
 
             if (tarefa == null)
             {
-                return new TarefaResponse("Tarefa não encontrada!");
+                return new TarefaResponse("Tarefa nï¿½o encontrada!");
             }
             try
             {
@@ -108,7 +107,7 @@ namespace Tarefas.Infrastructure.Services
 
             if (tarefa == null)
             {
-                return new TarefaResponse("Tarefa não encontrada!");
+                return new TarefaResponse("Tarefa nï¿½o encontrada!");
             }
 
             return new TarefaResponse(tarefa);

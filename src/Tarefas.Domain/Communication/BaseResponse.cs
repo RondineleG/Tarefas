@@ -30,5 +30,61 @@ namespace Tarefas.Domain.Communication
             Resource = resource;
         }
 
+        protected BaseResponse(string message, T resource)
+        {
+            Success = false;
+            Message = message;
+            Resource = resource;
+        }
+
+        protected BaseResponse(string message, IEnumerable<T> resource)
+        {
+            Success = false;
+            Message = message;
+            Resources = resource;
+        }
+
+        protected BaseResponse(IEnumerable<string> erros)
+        {
+            Success = false;
+            Message = string.Empty;
+            foreach (var erro in erros)
+            {
+                Message += erro;
+            }
+        }
+
+        protected BaseResponse(string message, IEnumerable<string> erros)
+        {
+            Success = false;
+            Message = message;
+            foreach (var erro in erros)
+            {
+                Message += erro;
+            }
+        }
+
+        protected BaseResponse(string message, IEnumerable<string> erros, T resource)
+        {
+            Success = false;
+            Message = message;
+            foreach (var erro in erros)
+            {
+                Message += erro;
+            }
+            Resource = resource;
+        }
+
+        protected BaseResponse(string message, IEnumerable<string> erros, IEnumerable<T> resource)
+        {
+            Success = false;
+            Message = message;
+            foreach (var erro in erros)
+            {
+                Message += erro;
+            }
+            Resources = resource;
+        }
+
     }
 }
