@@ -10,7 +10,6 @@ using Tarefas.Domain.Services;
 using Tarefas.Infrastructure.Persistence.Contexts;
 using Tarefas.Infrastructure.Persistence.Repositories;
 using Tarefas.Infrastructure.Services;
-using AutoMapper;
 
 namespace Tarefas.API
 {

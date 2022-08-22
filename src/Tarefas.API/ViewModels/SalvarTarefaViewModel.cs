@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace Tarefas.API.ViewModels
 {
     public class SalvarTarefaViewModel

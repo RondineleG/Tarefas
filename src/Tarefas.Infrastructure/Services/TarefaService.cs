@@ -1,4 +1,3 @@
-using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Threading.Tasks;
 using Tarefas.Domain.Communication;
@@ -21,14 +20,14 @@ namespace Tarefas.Infrastructure.Services
 
         public async Task<TarefaResponse> Adicionar(Tarefa tarefa)
         {
-            
+
             if (tarefa.Status != 0)
             {
                 return new TarefaResponse($"Tarefa não pode ser cadastrada como {EStatus.Pendente} ou {EStatus.Concluido}, o campos Status deve ser {0} ou {1}");
             }
 
 
-            if (tarefa.Descricao =="")
+            if (tarefa.Descricao == "")
             {
                 return new TarefaResponse($"Campo {tarefa.Status} � obrigatorio");
             }
@@ -53,16 +52,16 @@ namespace Tarefas.Infrastructure.Services
             if (tarefaExistente == null)
             {
                 return new TarefaResponse("Tarefa n�o encontrada!");
-            }                
+            }
 
             try
             {
                 if (tarefa.Descricao == null)
-                {                   
-                    var descricao = myType.GetProperty("Descricao").Name;                   
+                {
+                    var descricao = myType.GetProperty("Descricao").Name;
                     return new TarefaResponse($"Campos {descricao} e obrigatorio!");
                 }
-                if(tarefa.Status == EStatus.Pendente)
+                if (tarefa.Status == EStatus.Pendente)
                 {
                     var status = myType.GetProperty("Status").Name;
                     return new TarefaResponse($"Tarefa n�o pode ser alterado para {EStatus.Pendente}, o campos Status deve ser  {1}");
