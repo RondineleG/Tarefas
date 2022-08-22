@@ -23,19 +23,19 @@ namespace Tarefas.Infrastructure.Services
 
             if (tarefa.Status != 0)
             {
-                return new TarefaResponse($"Tarefa não pode ser cadastrada como {EStatus.Pendente} ou {EStatus.Concluido}, o campos Status deve ser {0} ou {1}");
+                return new TarefaResponse($"Tarefa não pode ser cadastrada como {EStatus.Concluido}, o campos Status deve ser {0}");
             }
-
 
             if (tarefa.Descricao == "")
             {
-                return new TarefaResponse($"Campo {tarefa.Status} � obrigatorio");
+                return new TarefaResponse($"Campo {tarefa.Descricao} é obrigatorio");
             }
+
+
             try
             {
                 await _tarefaRepository.Adicionar(tarefa);
                 await _unitOfWork.CompleteAsync();
-
                 return new TarefaResponse(tarefa);
             }
             catch (Exception ex)
@@ -85,7 +85,7 @@ namespace Tarefas.Infrastructure.Services
 
             if (tarefa == null)
             {
-                return new TarefaResponse("Tarefa n�o encontrada!");
+                return new TarefaResponse("Tarefa não encontrada!");
             }
             try
             {
@@ -106,7 +106,7 @@ namespace Tarefas.Infrastructure.Services
 
             if (tarefa == null)
             {
-                return new TarefaResponse("Tarefa n�o encontrada!");
+                return new TarefaResponse("Tarefa não encontrada!");
             }
 
             return new TarefaResponse(tarefa);
