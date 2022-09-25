@@ -1,4 +1,6 @@
-namespace Tarefas.Domain.Models
+using Tarefas.Domain.Enums;
+
+namespace Tarefas.Domain.Entities
 {
     public class Tarefa
     {

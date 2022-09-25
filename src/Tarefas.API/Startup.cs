@@ -30,7 +30,7 @@ namespace Tarefas.API
                 options.InvalidModelStateResponseFactory = InvalidModelStateResponse.ProduceErrorResponse;
             });
 
-            services.AddDbContext<AppDbContext>(options =>
+            services.AddDbContext<TarefaDbContext>(options =>
             {
                 options.UseSqlite(Configuration.GetConnectionString("default"));
             });

@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using Tarefas.Domain.Models;
+using Tarefas.Domain.Entities;
 
 namespace Tarefas.Infrastructure.Persistence.Contexts
 {
-    public class AppDbContext : DbContext
+    public class TarefaDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+        public TarefaDbContext(DbContextOptions<TarefaDbContext> options) : base(options) { }
         public DbSet<Tarefa> Tarefas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)

@@ -4,9 +4,9 @@ namespace Tarefas.Infrastructure.Persistence.Repositories
 {
     public abstract class BaseRepository
     {
-        protected readonly AppDbContext _context;
+        protected readonly TarefaDbContext _context;
 
-        public BaseRepository(AppDbContext context)
+        public BaseRepository(TarefaDbContext context)
         {
             _context = context;
         }

@@ -1,7 +1,8 @@
 using System;
 using System.Threading.Tasks;
 using Tarefas.Domain.Communication;
-using Tarefas.Domain.Models;
+using Tarefas.Domain.Entities;
+using Tarefas.Domain.Enums;
 using Tarefas.Domain.Repositories;
 using Tarefas.Domain.Services;
 

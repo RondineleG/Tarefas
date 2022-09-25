@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace Tarefas.Domain.Models
+namespace Tarefas.Domain.Enums
 {
     public enum EStatus : byte
     {

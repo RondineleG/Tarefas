@@ -6,8 +6,8 @@ using Tarefas.Infrastructure.Persistence.Contexts;
 
 namespace Tarefas.Infrastructure.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(TarefaDbContext))]
+    partial class TarefaDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -15,7 +15,7 @@ namespace Tarefas.Infrastructure.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.5");
 
-            modelBuilder.Entity("Tarefas.Domain.Models.Tarefa", b =>
+            modelBuilder.Entity("Tarefas.Domain.Enums.Tarefa", b =>
                 {
                     b.Property<int>("Codigo")
                         .ValueGeneratedOnAdd()

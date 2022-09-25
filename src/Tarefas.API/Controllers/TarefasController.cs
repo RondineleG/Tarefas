@@ -2,7 +2,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Tarefas.API.ViewModels;
-using Tarefas.Domain.Models;
+using Tarefas.Domain.Entities;
 using Tarefas.Domain.Services;
 
 namespace Tarefas.API.Controllers

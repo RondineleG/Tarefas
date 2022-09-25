@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Tarefas.Domain.Models;
+using Tarefas.Domain.Entities;
+using Tarefas.Domain.Enums;
 
 namespace Tarefas.Infrastructure.Persistence.Contexts.Configurations
 {

@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using Tarefas.Domain.Communication;
-using Tarefas.Domain.Models;
+using Tarefas.Domain.Entities;
 
 namespace Tarefas.Domain.Services
 {

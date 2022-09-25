@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Tarefas.Domain.Models;
+using Tarefas.Domain.Entities;
 
 namespace Tarefas.Domain.Repositories
 {

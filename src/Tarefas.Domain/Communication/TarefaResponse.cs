@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Tarefas.Domain.Models;
+using Tarefas.Domain.Entities;
 
 namespace Tarefas.Domain.Communication
 {

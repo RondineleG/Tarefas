@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Tarefas.Domain.Models;
+using Tarefas.Domain.Entities;
 using Tarefas.Domain.Repositories;
 using Tarefas.Infrastructure.Persistence.Contexts;
 
@@ -9,7 +9,7 @@ namespace Tarefas.Infrastructure.Persistence.Repositories
 {
     public class TarefaRepository : BaseRepository, ITarefaRepository
     {
-        public TarefaRepository(AppDbContext context) : base(context) { }
+        public TarefaRepository(TarefaDbContext context) : base(context) { }
 
 
         public async Task<Tarefa> BuscarPorId(int codigo)

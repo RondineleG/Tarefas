@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Tarefas.API.ViewModels;
-using Tarefas.Domain.Models;
+using Tarefas.Domain.Entities;
+using Tarefas.Domain.Enums;
 using Tarefas.Infrastructure.Extensions;
 
 namespace Tarefas.API.Configuration
